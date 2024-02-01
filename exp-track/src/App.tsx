@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import ExpenseList from './expense-tracker/components/ExpenseList';
+import ExpenseFilter from './expense-tracker/components/ExpenseFilter';
 
 function App() {
   // const handleDelete = (e) => {
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <>
+      <ExpenseFilter onSelectCategory={(category) => console.log(category)} />
       <ExpenseList
         expenses={expenses}
         onDelete={(id) =>
