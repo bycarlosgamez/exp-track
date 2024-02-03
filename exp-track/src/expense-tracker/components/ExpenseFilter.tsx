@@ -1,3 +1,5 @@
+import { categories } from '../../App';
+
 interface Props {
   onSelectCategory: (category: string) => void;
 }
@@ -8,10 +10,12 @@ const ExpenseFilter = ({ onSelectCategory }: Props) => {
       className='form-select form-select-lg'
       onChange={(e) => onSelectCategory(e.target.value)}
     >
-      <option value=''>All categories</option>
-      <option value='groceries'>Groceries</option>
-      <option value='utilities'>Utilities</option>
-      <option value='entertainment'>Entertainment</option>
+      <option value=''>Select Category</option>
+      {categories.map((category, i) => (
+        <option key={i} value={category}>
+          {category}
+        </option>
+      ))}
     </select>
   );
 };
