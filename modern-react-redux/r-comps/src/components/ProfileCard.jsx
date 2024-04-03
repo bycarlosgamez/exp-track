@@ -1,8 +1,9 @@
-function ProfileCard({ title, handle }) {
+function ProfileCard({ title, handle, img }) {
   return (
     <>
       <h2>{title}</h2>
       <p>{handle}</p>
+      <img src={img} />
     </>
   );
 }
